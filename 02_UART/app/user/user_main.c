@@ -24,8 +24,8 @@
 
 #include "ets_sys.h"
 #include "osapi.h"
-
 #include "user_interface.h"
+#include "driver/uart.h"
 
 uint32 priv_param_start_sec;
 void ICACHE_FLASH_ATTR user_esp_platform_init(void);
@@ -100,6 +100,7 @@ user_rf_pre_init(void)
 void ICACHE_FLASH_ATTR
 user_init(void)
 {
+	uart_init(9600,9600); //…Ë÷√≤®Ãÿ¬ 
 	os_printf("\r\n=============================================\r\n");
 	os_printf("Name :     UART  \n");
 	os_printf("SDK version:	%s	\n",	system_get_sdk_version());
